@@ -35,6 +35,17 @@ overrides:
   follow-redirects@<1.16.2: ^1.16.2
   launch-editor@<2.14.2: ^2.14.2
   glob@>=9.0.0 <14.0.2: ^14.0.2
+  minimatch@<11.0.1: ^11.0.1
+
+patchedDependencies:
+  '@electron/asar@3.4.1': 8f827069575075e80f2261d9f69125afd3bbb52f23f823e7a72ffb37229685b4
+  eslint-plugin-import@2.32.0: 69001da9b993a47ae0bda1d91aa68efa6a6b0eee3408432833eb76c68787538e
+  eslint-plugin-jsx-a11y@6.10.2: 2ae63a888ba893d320935c94105b7588b1fa77730ad05f3fed0ec19b1f1f11f7
+  eslint-plugin-react@7.37.5: 94c29334c56476f26d7dd2662c9dc2fd2a2ae58d2ee4dfb2066aa25e58ac2b21
+  glob@7.2.3: f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493
+  glob@8.1.0: 770718c78a97a396926a616e4b4963a338775a356217e83d3a1938cd130f14d5
+  karma-coverage@2.2.1: 12e99b5b574955afe4342ecb1df4893584fba31e10a36bc1f16186a9d8823615
+  karma@6.4.4: de622d6c94587a02fb670a5e457ba53bfc353f0db6518d2cdd8d69fd0b9972db
 
 importers:
 
@@ -94,13 +105,13 @@ importers:
         version: 15.0.0(eslint-plugin-import@2.32.0)(eslint@10.7.0)
       eslint-config-devextreme:
         specifier: ^1.1.11
-        version: 1.1.11(@stylistic/eslint-plugin@5.10.0(eslint@10.7.0))(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint@10.7.0)(typescript@4.9.5))(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-plugin-import@2.32.0)(eslint-plugin-jest@23.20.0(eslint@10.7.0)(typescript@4.9.5))(eslint-plugin-jsx-a11y@6.10.2(eslint@10.7.0))(eslint-plugin-no-only-tests@3.4.0)(eslint-plugin-qunit@4.3.0)(eslint-plugin-react-perf@3.3.3(eslint@10.7.0))(eslint-plugin-react@7.37.5(eslint@10.7.0))(eslint-plugin-rulesdir@0.2.2)(eslint-plugin-spellcheck@0.0.19(eslint@10.7.0))(eslint-plugin-vue@10.10.0(@stylistic/eslint-plugin@5.10.0(eslint@10.7.0))(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint@10.7.0)(vue-eslint-parser@10.4.1(eslint@10.7.0)))(eslint@10.7.0)(stylelint-config-standard@33.0.0(stylelint@15.11.0(typescript@4.9.5)))(stylelint@15.11.0(typescript@4.9.5))
+        version: 1.1.11(737c54ad7faac7df4b84c32842f1bc18)
       eslint-import-resolver-webpack:
         specifier: ^0.13.2
         version: 0.13.11(eslint-plugin-import@2.32.0)(webpack@5.108.4)
       eslint-plugin-import:
         specifier: ^2.26.0
-        version: 2.32.0(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0)
+        version: 2.32.0(patch_hash=69001da9b993a47ae0bda1d91aa68efa6a6b0eee3408432833eb76c68787538e)(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0)
       globals:
         specifier: ^17.7.0
         version: 17.7.0
@@ -124,16 +135,16 @@ importers:
         version: 4.6.1
       karma:
         specifier: ^6.4.4
-        version: 6.4.4
+        version: 6.4.4(patch_hash=de622d6c94587a02fb670a5e457ba53bfc353f0db6518d2cdd8d69fd0b9972db)
       karma-chrome-launcher:
         specifier: ^3.2.0
         version: 3.2.0
       karma-coverage:
         specifier: ^2.2.1
-        version: 2.2.1
+        version: 2.2.1(patch_hash=12e99b5b574955afe4342ecb1df4893584fba31e10a36bc1f16186a9d8823615)
       karma-jasmine:
         specifier: ^5.1.0
-        version: 5.1.0(karma@6.4.4)
+        version: 5.1.0(karma@6.4.4(patch_hash=de622d6c94587a02fb670a5e457ba53bfc353f0db6518d2cdd8d69fd0b9972db))
       lodash:
         specifier: ^4.17.21
         version: 4.18.1
@@ -3523,20 +3534,9 @@ packages:
   minimalistic-assert@1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
 
-  minimatch@10.2.5:
-    resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
-    engines: {node: 18 || 20 || >=22}
-
   minimatch@11.0.3:
     resolution: {integrity: sha512-iny/40PEGkNJQ5/Pv6z3nm6FbRAby32GeZRjCUJk2WnNDbgPSTcdI+DDvLqsgBdD4cD5sMtMheqPPnehCCa8Nw==}
     engines: {node: 18 || 20 || >=22}
-
-  minimatch@3.1.5:
-    resolution: {integrity: sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==}
-
-  minimatch@5.1.9:
-    resolution: {integrity: sha512-7o1wEA2RyMP7Iu7GNba9vc0RWWGACJOCZBJX2GJWip0ikV+wcOsgVuY9uE8CPiyQhkGFSlhuSkZPavN7u1c2Fw==}
-    engines: {node: '>=10'}
 
   minimist-options@4.1.0:
     resolution: {integrity: sha512-Q4r8ghd80yhO/0j1O3B2BjweX3fiHg9cdOwjJd2J76Q135c+NDxGCqdYKQ1SKBuFfgWbAUzBfvYjPUEeNgqN1A==}
@@ -5871,11 +5871,11 @@ snapshots:
 
   '@discoveryjs/json-ext@1.1.0': {}
 
-  '@electron/asar@3.4.1':
+  '@electron/asar@3.4.1(patch_hash=8f827069575075e80f2261d9f69125afd3bbb52f23f823e7a72ffb37229685b4)':
     dependencies:
       commander: 5.1.0
-      glob: 7.2.3
-      minimatch: 3.1.5
+      glob: 7.2.3(patch_hash=f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493)
+      minimatch: 11.0.3
 
   '@eslint-community/eslint-utils@4.9.1(eslint@10.7.0)':
     dependencies:
@@ -5888,7 +5888,7 @@ snapshots:
     dependencies:
       '@eslint/object-schema': 3.0.5
       debug: 4.4.3
-      minimatch: 10.2.5
+      minimatch: 11.0.3
     transitivePeerDependencies:
       - supports-color
 
@@ -5909,7 +5909,7 @@ snapshots:
       ignore: 5.3.2
       import-fresh: 3.3.1
       js-yaml: 4.3.2
-      minimatch: 3.1.5
+      minimatch: 11.0.3
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
@@ -6329,7 +6329,7 @@ snapshots:
 
   '@types/minimatch@6.0.0':
     dependencies:
-      minimatch: 10.2.5
+      minimatch: 11.0.3
 
   '@types/minimist@1.2.5': {}
 
@@ -6451,7 +6451,7 @@ snapshots:
     dependencies:
       debug: 4.4.3
       eslint-visitor-keys: 1.3.0
-      glob: 7.2.3
+      glob: 7.2.3(patch_hash=f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493)
       is-glob: 4.0.3
       lodash: 4.18.1
       semver: 7.8.5
@@ -6822,7 +6822,7 @@ snapshots:
   babel-plugin-module-resolver@5.0.0:
     dependencies:
       find-babel-config: 2.1.2
-      glob: 8.1.0
+      glob: 8.1.0(patch_hash=770718c78a97a396926a616e4b4963a338775a356217e83d3a1938cd130f14d5)
       pkg-up: 3.1.0
       reselect: 4.1.8
       resolve: 1.22.12
@@ -7542,23 +7542,23 @@ snapshots:
     dependencies:
       confusing-browser-globals: 1.0.11
       eslint: 10.7.0
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0)
+      eslint-plugin-import: 2.32.0(patch_hash=69001da9b993a47ae0bda1d91aa68efa6a6b0eee3408432833eb76c68787538e)(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0)
       object.assign: 4.1.7
       object.entries: 1.1.9
       semver: 6.3.1
 
-  eslint-config-devextreme@1.1.11(@stylistic/eslint-plugin@5.10.0(eslint@10.7.0))(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint@10.7.0)(typescript@4.9.5))(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-plugin-import@2.32.0)(eslint-plugin-jest@23.20.0(eslint@10.7.0)(typescript@4.9.5))(eslint-plugin-jsx-a11y@6.10.2(eslint@10.7.0))(eslint-plugin-no-only-tests@3.4.0)(eslint-plugin-qunit@4.3.0)(eslint-plugin-react-perf@3.3.3(eslint@10.7.0))(eslint-plugin-react@7.37.5(eslint@10.7.0))(eslint-plugin-rulesdir@0.2.2)(eslint-plugin-spellcheck@0.0.19(eslint@10.7.0))(eslint-plugin-vue@10.10.0(@stylistic/eslint-plugin@5.10.0(eslint@10.7.0))(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint@10.7.0)(vue-eslint-parser@10.4.1(eslint@10.7.0)))(eslint@10.7.0)(stylelint-config-standard@33.0.0(stylelint@15.11.0(typescript@4.9.5)))(stylelint@15.11.0(typescript@4.9.5)):
+  eslint-config-devextreme@1.1.11(737c54ad7faac7df4b84c32842f1bc18):
     dependencies:
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.7.0)
       '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint@10.7.0)(typescript@4.9.5)
       '@typescript-eslint/parser': 4.33.0(eslint@10.7.0)(typescript@4.9.5)
       eslint: 10.7.0
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0)
+      eslint-plugin-import: 2.32.0(patch_hash=69001da9b993a47ae0bda1d91aa68efa6a6b0eee3408432833eb76c68787538e)(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0)
       eslint-plugin-jest: 23.20.0(eslint@10.7.0)(typescript@4.9.5)
-      eslint-plugin-jsx-a11y: 6.10.2(eslint@10.7.0)
+      eslint-plugin-jsx-a11y: 6.10.2(patch_hash=2ae63a888ba893d320935c94105b7588b1fa77730ad05f3fed0ec19b1f1f11f7)(eslint@10.7.0)
       eslint-plugin-no-only-tests: 3.4.0
       eslint-plugin-qunit: 4.3.0
-      eslint-plugin-react: 7.37.5(eslint@10.7.0)
+      eslint-plugin-react: 7.37.5(patch_hash=94c29334c56476f26d7dd2662c9dc2fd2a2ae58d2ee4dfb2066aa25e58ac2b21)(eslint@10.7.0)
       eslint-plugin-react-perf: 3.3.3(eslint@10.7.0)
       eslint-plugin-rulesdir: 0.2.2
       eslint-plugin-spellcheck: 0.0.19(eslint@10.7.0)
@@ -7578,7 +7578,7 @@ snapshots:
     dependencies:
       debug: 3.2.7
       enhanced-resolve: 0.9.1
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0)
+      eslint-plugin-import: 2.32.0(patch_hash=69001da9b993a47ae0bda1d91aa68efa6a6b0eee3408432833eb76c68787538e)(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0)
       find-root: 1.1.0
       hasown: 2.0.4
       interpret: 1.4.0
@@ -7602,7 +7602,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0):
+  eslint-plugin-import@2.32.0(patch_hash=69001da9b993a47ae0bda1d91aa68efa6a6b0eee3408432833eb76c68787538e)(@typescript-eslint/parser@4.33.0(eslint@10.7.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.13.11)(eslint@10.7.0):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -7617,7 +7617,7 @@ snapshots:
       hasown: 2.0.4
       is-core-module: 2.16.2
       is-glob: 4.0.3
-      minimatch: 3.1.5
+      minimatch: 11.0.3
       object.fromentries: 2.0.8
       object.groupby: 1.0.3
       object.values: 1.2.1
@@ -7639,7 +7639,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-jsx-a11y@6.10.2(eslint@10.7.0):
+  eslint-plugin-jsx-a11y@6.10.2(patch_hash=2ae63a888ba893d320935c94105b7588b1fa77730ad05f3fed0ec19b1f1f11f7)(eslint@10.7.0):
     dependencies:
       aria-query: 5.3.2
       array-includes: 3.1.9
@@ -7653,7 +7653,7 @@ snapshots:
       hasown: 2.0.4
       jsx-ast-utils: 3.3.5
       language-tags: 1.0.9
-      minimatch: 3.1.5
+      minimatch: 11.0.3
       object.fromentries: 2.0.8
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
@@ -7666,7 +7666,7 @@ snapshots:
     dependencies:
       eslint: 10.7.0
 
-  eslint-plugin-react@7.37.5(eslint@10.7.0):
+  eslint-plugin-react@7.37.5(patch_hash=94c29334c56476f26d7dd2662c9dc2fd2a2ae58d2ee4dfb2066aa25e58ac2b21)(eslint@10.7.0):
     dependencies:
       array-includes: 3.1.9
       array.prototype.findlast: 1.2.5
@@ -7678,7 +7678,7 @@ snapshots:
       estraverse: 5.3.0
       hasown: 2.0.4
       jsx-ast-utils: 3.3.5
-      minimatch: 3.1.5
+      minimatch: 11.0.3
       object.entries: 1.1.9
       object.fromentries: 2.0.8
       object.values: 1.2.1
@@ -7766,7 +7766,7 @@ snapshots:
       imurmurhash: 0.1.4
       is-glob: 4.0.3
       json-stable-stringify-without-jsonify: 1.0.1
-      minimatch: 10.2.5
+      minimatch: 11.0.3
       natural-compare: 1.4.0
       optionator: 0.9.4
     transitivePeerDependencies:
@@ -8102,21 +8102,21 @@ snapshots:
       minipass: 7.1.3
       path-scurry: 3.0.0
 
-  glob@7.2.3:
+  glob@7.2.3(patch_hash=f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493):
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.1.5
+      minimatch: 11.0.3
       once: 1.4.0
       path-is-absolute: 1.0.1
 
-  glob@8.1.0:
+  glob@8.1.0(patch_hash=770718c78a97a396926a616e4b4963a338775a356217e83d3a1938cd130f14d5):
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 5.1.9
+      minimatch: 11.0.3
       once: 1.4.0
 
   global-modules@2.0.0:
@@ -8148,7 +8148,7 @@ snapshots:
       array-union: 2.1.0
       dir-glob: 3.0.1
       fast-glob: 3.3.3
-      glob: 7.2.3
+      glob: 7.2.3(patch_hash=f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493)
       ignore: 5.3.2
       merge2: 1.4.1
       slash: 3.0.0
@@ -8165,7 +8165,7 @@ snapshots:
   globby@6.1.0:
     dependencies:
       array-union: 1.0.2
-      glob: 7.2.3
+      glob: 7.2.3(patch_hash=f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493)
       object-assign: 4.1.1
       pify: 2.3.0
       pinkie-promise: 2.0.1
@@ -8637,7 +8637,7 @@ snapshots:
 
   jasmine@4.6.0:
     dependencies:
-      glob: 7.2.3
+      glob: 7.2.3(patch_hash=f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493)
       jasmine-core: 4.6.1
 
   jest-worker@27.5.1:
@@ -8705,23 +8705,23 @@ snapshots:
     dependencies:
       which: 1.3.1
 
-  karma-coverage@2.2.1:
+  karma-coverage@2.2.1(patch_hash=12e99b5b574955afe4342ecb1df4893584fba31e10a36bc1f16186a9d8823615):
     dependencies:
       istanbul-lib-coverage: 3.2.2
       istanbul-lib-instrument: 5.2.1
       istanbul-lib-report: 3.0.1
       istanbul-lib-source-maps: 4.0.1
       istanbul-reports: 3.2.0
-      minimatch: 3.1.5
+      minimatch: 11.0.3
     transitivePeerDependencies:
       - supports-color
 
-  karma-jasmine@5.1.0(karma@6.4.4):
+  karma-jasmine@5.1.0(karma@6.4.4(patch_hash=de622d6c94587a02fb670a5e457ba53bfc353f0db6518d2cdd8d69fd0b9972db)):
     dependencies:
       jasmine-core: 4.6.1
-      karma: 6.4.4
+      karma: 6.4.4(patch_hash=de622d6c94587a02fb670a5e457ba53bfc353f0db6518d2cdd8d69fd0b9972db)
 
-  karma@6.4.4:
+  karma@6.4.4(patch_hash=de622d6c94587a02fb670a5e457ba53bfc353f0db6518d2cdd8d69fd0b9972db):
     dependencies:
       '@colors/colors': 1.5.0
       body-parser: 2.4.0
@@ -8730,14 +8730,14 @@ snapshots:
       connect: 3.7.0
       di: 0.0.1
       dom-serialize: 2.2.1
-      glob: 7.2.3
+      glob: 7.2.3(patch_hash=f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493)
       graceful-fs: 4.2.11
       http-proxy: 1.18.1
       isbinaryfile: 4.0.10
       lodash: 4.18.1
       log4js: 6.9.1
       mime: 2.6.0
-      minimatch: 3.1.5
+      minimatch: 11.0.3
       mkdirp: 0.5.6
       qjobs: 1.2.0
       range-parser: 1.2.1
@@ -8950,21 +8950,9 @@ snapshots:
 
   minimalistic-assert@1.0.1: {}
 
-  minimatch@10.2.5:
-    dependencies:
-      brace-expansion: 5.0.12
-
   minimatch@11.0.3:
     dependencies:
       '@isaacs/nonrecursive-glob-match': 1.0.3
-      brace-expansion: 5.0.12
-
-  minimatch@3.1.5:
-    dependencies:
-      brace-expansion: 5.0.12
-
-  minimatch@5.1.9:
-    dependencies:
       brace-expansion: 5.0.12
 
   minimist-options@4.1.0:
@@ -9552,11 +9540,11 @@ snapshots:
 
   rimraf@2.7.1:
     dependencies:
-      glob: 7.2.3
+      glob: 7.2.3(patch_hash=f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493)
 
   rimraf@3.0.2:
     dependencies:
-      glob: 7.2.3
+      glob: 7.2.3(patch_hash=f7f73472f30c9c9d054394e406cb6f23d8830c8c61e50da95ac708be88db6493)
 
   router@2.2.0:
     dependencies:
@@ -10053,7 +10041,7 @@ snapshots:
     dependencies:
       '@istanbuljs/schema': 0.1.6
       glob: 14.0.3
-      minimatch: 10.2.5
+      minimatch: 11.0.3
 
   testcafe-browser-tools@2.0.26:
     dependencies:
@@ -10080,7 +10068,7 @@ snapshots:
   testcafe-hammerhead@31.7.8:
     dependencies:
       '@adobe/css-tools': 4.5.0
-      '@electron/asar': 3.4.1
+      '@electron/asar': 3.4.1(patch_hash=8f827069575075e80f2261d9f69125afd3bbb52f23f823e7a72ffb37229685b4)
       '@node-ntlm/core': 0.3.2
       acorn-hammerhead: 0.6.2
       bowser: 1.6.0
