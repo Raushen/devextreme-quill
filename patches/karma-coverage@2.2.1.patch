@@ -1,0 +1,26 @@
+diff --git a/lib/preprocessor.js b/lib/preprocessor.js
+index 0323311411a9affd9bca187e5cffa771e007266c..e3b5cddba3a45688662899bb4147e01078be68a4 100644
+--- a/lib/preprocessor.js
++++ b/lib/preprocessor.js
+@@ -7,7 +7,7 @@
+ // ------------
+ 
+ const { createInstrumenter } = require('istanbul-lib-instrument')
+-const minimatch = require('minimatch')
++const minimatch = require('minimatch').minimatch
+ const path = require('path')
+ const globalSourceMapStore = require('./source-map-store')
+ const globalCoverageMap = require('./coverage-map')
+diff --git a/lib/reporter.js b/lib/reporter.js
+index b062af637f3a302abb699064402678321c42e58b..08b6173f0dfc57ffd98e7e59153aed01eb4179b9 100644
+--- a/lib/reporter.js
++++ b/lib/reporter.js
+@@ -14,7 +14,7 @@ var path = require('path')
+ const { promisify } = require('util')
+ var istanbulLibCoverage = require('istanbul-lib-coverage')
+ var istanbulLibReport = require('istanbul-lib-report')
+-var minimatch = require('minimatch')
++var minimatch = require('minimatch').minimatch
+ 
+ var globalSourceMapStore = require('./source-map-store')
+ var globalCoverageMap = require('./coverage-map')

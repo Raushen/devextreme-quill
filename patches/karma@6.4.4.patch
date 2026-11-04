@@ -1,0 +1,64 @@
+diff --git a/lib/file-list.js b/lib/file-list.js
+index b4ec01d29edf7a77b837b098a57a4a7189482f51..014e4e76b1ce6ecf840416148a664bdd0494a725 100644
+--- a/lib/file-list.js
++++ b/lib/file-list.js
+@@ -1,7 +1,7 @@
+ 'use strict'
+ 
+ const { promisify } = require('util')
+-const mm = require('minimatch')
++const mm = require('minimatch').minimatch
+ const Glob = require('glob').Glob
+ const fs = require('graceful-fs')
+ const statAsync = promisify(fs.stat.bind(fs))
+diff --git a/lib/helper.js b/lib/helper.js
+index 9be119378e30dc12fad5095df2320271b9fd6157..0a0edaa4e793d2c36757bd1a9cbd9dd35b197555 100644
+--- a/lib/helper.js
++++ b/lib/helper.js
+@@ -3,7 +3,7 @@
+ const _ = require('lodash')
+ const mkdirp = require('mkdirp')
+ const useragent = require('ua-parser-js')
+-const mm = require('minimatch')
++const mm = require('minimatch').minimatch
+ 
+ exports.browserFullNameToShort = (fullName) => {
+   const ua = useragent(fullName)
+diff --git a/lib/init.js b/lib/init.js
+index f55f94e949891e3126a9e73170fa45de2fb3487e..fa43d1071b694b758e1433fe8f88158ea2f64381 100755
+--- a/lib/init.js
++++ b/lib/init.js
+@@ -3,7 +3,7 @@
+ const readline = require('readline')
+ const path = require('path')
+ const glob = require('glob')
+-const mm = require('minimatch')
++const mm = require('minimatch').minimatch
+ const exec = require('child_process').exec
+ 
+ const helper = require('./helper')
+diff --git a/lib/preprocessor.js b/lib/preprocessor.js
+index b6bf756950e8b98304d0c57982af0927920f6508..c3ada68b1b4de14d94c988698557d8ee35ac3ff2 100644
+--- a/lib/preprocessor.js
++++ b/lib/preprocessor.js
+@@ -20,7 +20,7 @@ const tryToRead = function (path, log) {
+   })
+ }
+ 
+-const mm = require('minimatch')
++const mm = require('minimatch').minimatch
+ const { isBinaryFile } = require('isbinaryfile')
+ const _ = require('lodash')
+ const CryptoUtils = require('./utils/crypto-utils')
+diff --git a/lib/watcher.js b/lib/watcher.js
+index 7a16667e7083ad37400e1dd6618201762ac19758..2ad107b2a989e0d5fe09caa6c5b45aa19eea4abe 100644
+--- a/lib/watcher.js
++++ b/lib/watcher.js
+@@ -1,6 +1,6 @@
+ 'use strict'
+ 
+-const mm = require('minimatch')
++const mm = require('minimatch').minimatch
+ const braces = require('braces')
+ const PatternUtils = require('./utils/pattern-utils')
+ 
